@@ -5,7 +5,10 @@ commands:
     description: "A very simple command for demonstration purposes"
     steps:
       - run: return 1
-      - run: echo "FAILED LAST STEP"
+      - run:
+        name: HANDLE_FAIL
+        command: echo "FAILED LAST STEP"
+        when: on_fail
 
 workflows:
   version: 2
